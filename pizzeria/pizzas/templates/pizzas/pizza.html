@@ -9,10 +9,16 @@
       <li>
 	    <p>{{ topping.date_added|date:'M d,Y H:i' }}</p>
 	    <p>{{ topping.name|linebreaks }}</p>
+	    <p>
+			<a href="{% url 'pizzas:edit_topping' topping.id %}">编辑介绍</a>
+		</p>
 	  </li>
 	{% empty %}
       <li>暂无介绍</li>
     {% endfor %}
   </ul>
+  <p>
+	  <a href="{% url 'pizzas:new_topping' pizza.id %}">新增介绍</a>
+  </p>
   
 {% endblock content %}
